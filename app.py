@@ -47,12 +47,12 @@ def classify_food_image(image_url):
         yellow_coverage = np.sum(yellow_mask > 0) / plate_pixel_count
 
         if yellow_coverage > 0.5:
-            return {"status": "False", "message": "Empty Colored Plate"}
+            return {"status": "False"}
 
         if food_coverage > 0.2:
-            return {"status": "True", "message": "Food Present"}
+            return {"status": "True"}
         else:
-            return {"status": "False", "message": "Empty or Leftover Food"}
+            return {"status": "False"}
     
     except Exception as e:
         return {"status": "Error", "message": str(e)}
